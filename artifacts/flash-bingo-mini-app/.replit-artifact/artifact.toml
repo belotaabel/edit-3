@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Flash Bingo Telegram Mini App"
+description = "A Telegram Mini App version of Flash Bingo with card selection, live number calling, Telegram theme support, and a browser demo fallback."
+version = "1.0.0"
+id = "artifacts/flash-bingo-mini-app"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18542
+
+[services.development]
+run = "pnpm --filter @workspace/flash-bingo-mini-app run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/flash-bingo-mini-app", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/flash-bingo-mini-app/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18542"
+BASE_PATH = "/"
