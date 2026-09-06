@@ -330,6 +330,20 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .game-shell .selection-screen .card-grid-cell { border: 1px solid hsl(245 70% 65% / .45); background: radial-gradient(circle at 35% 20%, hsl(272 65% 45%), hsl(253 70% 18%)); box-shadow: inset 0 -2px 3px hsl(220 50% 5% / .7), 0 0 5px hsl(253 80% 60% / .25); color: hsl(0 0% 100%); }
   .game-shell .selection-screen .card-grid-cell.called-number { border-color: hsl(198 100% 75%); background: radial-gradient(circle at 32% 18%, hsl(195 100% 78%), hsl(198 100% 48%) 55%, hsl(215 100% 35%)); box-shadow: 0 0 12px hsl(198 100% 58% / .9), inset 0 -3px 4px hsl(215 100% 23% / .65); }
   .game-shell .selection-screen .card-grid-cell.winner-corner-cell { background: radial-gradient(circle, hsl(48 100% 68%), hsl(35 100% 43%)); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card { position: relative; overflow: hidden; }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card::before { content: ''; position: absolute; pointer-events: none; inset: 0; border-radius: inherit; background: linear-gradient(135deg, hsl(198 100% 80% / .26), transparent 35%); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:first-child { position: relative; z-index: 1; color: hsl(0 0% 100%); text-shadow: 0 0 8px hsl(198 100% 65% / .65); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .3rem; }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span { font-size: .72rem; font-weight: 950; text-shadow: 0 0 7px currentColor; }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span:nth-child(1) { color: hsl(0 100% 67%); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span:nth-child(2) { color: hsl(48 100% 66%); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span:nth-child(3) { color: hsl(136 100% 57%); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span:nth-child(4) { color: hsl(198 100% 69%); }
+  .game-shell .selection-screen > .space-y-3 > .grid.grid-cols-2 > .depth-card > div:nth-child(2) > span:nth-child(5) { color: hsl(276 100% 73%); }
+  .game-shell .selection-screen .card-grid-cell { min-width: 0; border-radius: 999px; font-size: clamp(.62rem, 2.7vw, .82rem); }
+  .game-shell .selection-screen .card-grid-cell:not(.called-number):not(.card-star-cell):not(.winner-line-cell):not(.winner-corner-cell) { background: radial-gradient(circle at 35% 18%, hsl(275 68% 43%), hsl(258 70% 16%)); box-shadow: inset 0 -3px 4px hsl(220 50% 5% / .72), 0 0 5px hsl(263 90% 60% / .32); }
+  .game-shell .selection-screen .card-grid-cell.called-number { border-color: hsl(198 100% 78%); background: radial-gradient(circle at 32% 18%, hsl(195 100% 80%), hsl(198 100% 48%) 55%, hsl(215 100% 32%)); box-shadow: 0 0 13px hsl(198 100% 58% / .95), inset 0 -3px 4px hsl(215 100% 23% / .7); color: hsl(0 0% 100%); }
+  .game-shell .selection-screen .card-grid-cell.card-star-cell { border-color: hsl(48 100% 78%); background: radial-gradient(circle at 35% 20%, hsl(57 100% 78%), hsl(43 100% 51%) 55%, hsl(32 100% 35%)); box-shadow: 0 0 14px hsl(43 100% 58% / .95), inset 0 -3px 4px hsl(30 90% 25% / .7); color: hsl(0 0% 100%); font-size: 1.15rem; }
   .game-shell .bottom-nav { border-color: hsl(198 100% 58% / .75); background: linear-gradient(180deg, hsl(225 70% 12% / .98), hsl(229 70% 6% / .98)); box-shadow: 0 -8px 24px hsl(198 100% 50% / .16); }
   .game-shell .bottom-nav-button { color: hsl(0 0% 100% / .78); }
   .game-shell .bottom-nav-button.bottom-nav-selected { color: hsl(48 100% 67%); text-shadow: 0 0 10px hsl(43 100% 55% / .75); }
