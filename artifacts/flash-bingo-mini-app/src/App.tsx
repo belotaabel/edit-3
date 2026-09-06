@@ -685,7 +685,6 @@ function Home() {
   };
   const selectedCards = [...selected].sort((a, b) => a - b);
   const canSelect = round?.status === 'selecting' && countdown > 5;
-  const selectionStarting = round?.status === 'selecting' && countdown === 0;
   useEffect(() => {
     if (round?.status === 'playing' && selectedRef.current.size > 0) {
       sessionStorage.setItem('selectedSlots', JSON.stringify([...selectedRef.current]));
@@ -698,9 +697,7 @@ function Home() {
         <Stats play={totalBalance} pot={Number(round?.pot ?? '0')} cardsTaken={taken.size} stake={stakePerCard} />
         <SoundCountdown countdown={countdown} status={round?.status ?? 'loading'} />
         {roundError && <div role="alert" data-testid="status-round-error" className="mx-3 mt-3 rounded-xl border border-[hsl(var(--destructive)/.55)] bg-[hsl(var(--destructive)/.1)] px-3 py-2 text-center text-xs font-bold text-[hsl(var(--destructive))]">{roundError}</div>}
-        {round?.status === 'selecting' && countdown > 0 && countdown <= 5 && <div role="status" data-testid="status-card-lock" className="mx-3 mt-3 rounded-2xl border border-[hsl(var(--accent)/.75)] bg-[linear-gradient(135deg,hsl(var(--accent)/.18),hsl(var(--primary)/.12))] px-4 py-3 text-center shadow-[0_0_22px_hsl(var(--accent)/.18)] animate-pulse"><p className="text-sm font-extrabold text-[hsl(var(--accent))]">🔒 ካርድ መያዣ ሊቆለፍ ነው!</p><p className="mt-1 text-xs font-bold text-[hsl(var(--foreground)/.8)]">{countdown} ሰከንድ ቀርቷል — ካርድዎን አሁኑኑ ይምረጡ</p></div>}
-        {selectionStarting && <div role="status" data-testid="status-round-transition" className="mx-3 mt-3 rounded-xl border border-[hsl(var(--primary)/.55)] bg-[hsl(var(--primary)/.1)] px-3 py-2 text-center text-xs font-bold text-[hsl(var(--primary))]">ጨዋታው እየተጀመረ ነው፤ እባክዎ ይጠብቁ</div>}
-        <div className="relative min-h-0 flex-1 overflow-y-auto"><NumberGrid selected={selected} taken={taken} onToggle={toggle} canSelect={canSelect} maxCards={maxCards} />{round?.status === 'playing' && selectedCards.length === 0 && <div role="status" data-testid="status-game-in-progress" className="absolute inset-0 z-10 grid place-items-center bg-[hsl(35_100%_97%/.92)] px-6 text-center backdrop-blur-sm"><div className="rounded-2xl border border-[hsl(var(--primary)/.55)] bg-[hsl(0_0%_100%)] px-5 py-4 text-sm font-extrabold text-[hsl(var(--primary))] shadow-xl">GAME IN PROGRESS<br /><span className="mt-1 block text-xs font-medium text-[hsl(var(--foreground)/.72)]">wait for next round</span></div></div>}</div>
+        <div className="relative min-h-0 flex-1 overflow-y-auto"><NumberGrid selected={selected} taken={taken} onToggle={toggle} canSelect={canSelect} maxCards={maxCards} /></div>
         {selectedCards.length > 0 && <div className="absolute bottom-[74px] left-0 right-0 z-10 flex gap-2 overflow-x-auto overflow-y-hidden bg-gradient-to-t from-[hsl(35_100%_97%)] to-transparent px-3 pb-2 pt-8">{selectedCards.map((id) => <MiniCard key={id} id={id} grid={buildCard(id)} />)}</div>}
         {showWarning && <div role="alert" data-testid="status-card-limit" className="absolute left-4 right-4 top-24 z-30 rounded-2xl border border-[hsl(var(--primary)/.6)] bg-[hsl(0_0%_100%/.98)] px-4 py-3 text-center text-sm font-bold text-[hsl(var(--primary))] shadow-xl animate-rise-in">{warningMessage || `ከ${maxCards} ካርድ በላይ መምረጥ አይችሉም`}</div>}
       </div>}
