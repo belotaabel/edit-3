@@ -63,34 +63,34 @@
   --opaque-button-border-intensity: -10;
   --elevate-1: rgba(31, 38, 50, .035);
   --elevate-2: rgba(31, 38, 50, .08);
-  --background: 35 100% 97%;
+  --background: 263 60% 97%;
   --foreground: 222 26% 18%;
-  --border: 33 28% 82%;
-  --card: 0 0% 100%;
+  --border: 263 28% 82%;
+  --card: 263 68% 98%;
   --card-foreground: 222 26% 18%;
-  --card-border: 33 28% 84%;
-  --sidebar: 35 100% 97%;
+  --card-border: 263 28% 85%;
+  --sidebar: 263 60% 97%;
   --sidebar-foreground: 222 26% 18%;
-  --sidebar-border: 33 28% 82%;
+  --sidebar-border: 263 28% 82%;
   --sidebar-primary: 262 83% 58%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 174 65% 38%;
   --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-ring: 262 83% 58%;
-  --popover: 0 0% 100%;
+  --popover: 263 68% 98%;
   --popover-foreground: 222 26% 18%;
-  --popover-border: 33 28% 82%;
+  --popover-border: 263 28% 82%;
   --primary: 262 83% 58%;
   --primary-foreground: 0 0% 100%;
   --secondary: 43 96% 63%;
   --secondary-foreground: 222 26% 18%;
-  --muted: 35 45% 93%;
+  --muted: 263 32% 93%;
   --muted-foreground: 220 12% 45%;
   --accent: 174 65% 38%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 56%;
   --destructive-foreground: 0 0% 100%;
-  --input: 33 28% 82%;
+  --input: 263 28% 82%;
   --ring: 262 83% 58%;
   --chart-1: 262 83% 58%;
   --chart-2: 174 65% 38%;
@@ -128,18 +128,18 @@
 }
 
 .dark {
-  --background: 35 100% 97%;
+  --background: 263 60% 97%;
   --foreground: 222 26% 18%;
-  --card: 0 0% 100%;
+  --card: 263 68% 98%;
   --card-foreground: 222 26% 18%;
-  --muted: 35 45% 93%;
+  --muted: 263 32% 93%;
   --muted-foreground: 220 12% 45%;
   --primary: 262 83% 58%;
   --primary-foreground: 0 0% 100%;
   --accent: 174 65% 38%;
   --accent-foreground: 0 0% 100%;
-  --border: 33 28% 82%;
-  --input: 33 28% 82%;
+  --border: 263 28% 82%;
+  --input: 263 28% 82%;
   --ring: 262 83% 58%;
 }
 
@@ -259,7 +259,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .single-winner-ticket-head svg { width: 1.2rem; height: 1.2rem; }
   .single-winner-ticket-head > span { border: 1px solid hsl(var(--secondary)); border-radius: 999px; padding: .2rem .5rem; color: hsl(var(--secondary)); font-size: .65rem; }
   .single-winner-card-frame { max-width: none; margin-top: .5rem; border-width: 0; border-radius: .7rem; background: transparent; box-shadow: none; padding: 0; }
-  .single-winner-card-frame .depth-card { border-color: hsl(var(--accent) / .35); background: hsl(0 0% 100% / .94); padding: .45rem; }
+  .single-winner-card-frame .depth-card { border-color: hsl(var(--accent) / .35); background: hsl(var(--card) / .96); padding: .45rem; }
   .single-winner-count { margin-top: .65rem; color: hsl(0 0% 100% / .7); font-size: .7rem; }
   .single-winner-action { margin-top: .8rem; border: 0; border-radius: .75rem; background: hsl(var(--secondary)); box-shadow: 0 4px 0 hsl(40 75% 44% / .55); padding: .7rem 1.3rem; color: hsl(var(--secondary-foreground)); font-size: .78rem; font-weight: 900; }
   .winner-trophy { font-size: 4.5rem; line-height: 1; animation: trophy-bounce .75s both; }
@@ -270,7 +270,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .winner-summary { margin: 2rem auto; max-width: 29rem; border: 1px solid hsl(var(--accent) / .36); border-radius: 2rem; background: hsl(0 0% 100% / .12); padding: 1.1rem 1rem; color: hsl(0 0% 100%); font-size: 1rem; font-weight: 700; }
   .winner-summary strong { color: hsl(var(--secondary)); }
   .winner-summary span { margin: 0 .3rem; color: hsl(0 0% 100% / .6); }
-  .winner-card-frame { margin: 0 auto; max-width: 19rem; border: 3px solid hsl(var(--secondary)); border-radius: 1.4rem; background: hsl(0 0% 100% / .96); padding: .55rem; }
+  .winner-card-frame { margin: 0 auto; max-width: 19rem; border: 3px solid hsl(var(--secondary)); border-radius: 1.4rem; background: hsl(var(--card) / .96); padding: .55rem; }
   .multi-winner-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin: 1.2rem auto 1rem; max-width: 29rem; }
   .multi-winner-stat { border: 1px solid hsl(var(--accent) / .4); border-radius: 1.25rem; background: hsl(0 0% 100% / .12); padding: .8rem .55rem; }
   .multi-winner-stat-label, .multi-winner-final-label { display: block; color: hsl(0 0% 100% / .7); font-size: .62rem; font-weight: 900; letter-spacing: .14em; }
@@ -299,7 +299,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .confetti-piece-3 { left: 58%; background: hsl(var(--destructive)); animation-delay: -.9s; }
   .confetti-piece-4 { left: 76%; background: hsl(206 74% 51%); animation-delay: -2.8s; }
   .confetti-piece-5 { left: 92%; background: hsl(var(--accent)); animation-delay: -1.8s; }
-  .game-over-error { padding: 2rem 1.25rem; border: 1px solid hsl(var(--destructive) / .45); border-radius: 1.5rem; background: hsl(0 0% 100% / .96); box-shadow: var(--shadow-xl); }
+  .game-over-error { padding: 2rem 1.25rem; border: 1px solid hsl(var(--destructive) / .45); border-radius: 1.5rem; background: hsl(var(--card) / .96); box-shadow: var(--shadow-xl); }
   .game-over-error-icon { display: grid; width: 3.5rem; height: 3.5rem; margin: 0 auto 1rem; place-items: center; border: 2px solid hsl(var(--destructive)); border-radius: 999px; color: hsl(var(--destructive)); font-size: 2rem; font-weight: 900; }
   .game-over-error-label { margin-top: .75rem; color: hsl(var(--destructive)); font-size: .85rem; font-weight: 900; letter-spacing: .14em; }
   .game-over-error-message { margin: 1rem auto 0; max-width: 28rem; color: hsl(var(--foreground) / .82); font-size: .95rem; line-height: 1.6; }
